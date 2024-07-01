@@ -1,0 +1,31 @@
+
+{% load i18n %}
+
+<!-- Modal search-->
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <form action="{% url 'search_post' %}"  method="post">
+          
+          {% csrf_token %}
+          <input class="form-control form-control-lg"  name="search" id="input_search" type="text" placeholder="{% translate 'Search' %}" aria-label=".form-control-lg example">
+
+          <!-- results are added with dynamic_search.js  -->
+          <div class="list-group" id="results_list">
+          </div>
+
+          <!-- buttons -->
+          <div class="modal-footer">
+            <a href="" class="btn btn-secondary" data-bs-dismiss="modal">{% translate 'Close' %}</a>
+            <button type="submit" class="btn btn-light disabled" id="search_button">{% translate 'Search' %}</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+

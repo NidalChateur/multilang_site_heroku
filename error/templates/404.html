@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+
+  <h1 class="text-center mt-5 pt-5">
+    (404) {% translate "Oops! Page not found" %}
+  </h1>
+  <p class="text-center mt-3">
+    {% translate "It seems that the page you are looking for does not exist or has been moved." %}
+  </p>
+
+
+
+{% endblock content %}

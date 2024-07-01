@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+    {% for post in page_obj %}
+
+        {% include 'partials/read_post.html' %}
+
+    {% empty %}
+
+            <p>{% translate 'No post' %}.</p>
+
+    {% endfor %}
+
+    {% include "partials/pagination.html" %}
+
+{% endblock content %}

@@ -1,0 +1,139 @@
+{% load i18n %}
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse container" id="navbarSupportedContent">
+            <!-- brand -->
+            <a class="navbar-brand" href="{% url 'posts' %}">Blogs</a>
+
+            <!--  Left Side  -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+                <!-- home -->
+              <li class="nav-item">
+                {% if request.path == "/fr/posts/" or  request.path == "/en/posts/" %}
+                  <a class="nav-link active fw-bold" aria-current="page" href="{% url 'posts' %}">{% translate 'Home' %} <i class="bi bi-house-fill"></i></a>
+                {% else %}
+                  <a class="nav-link" href="{% url 'posts' %}">{% translate 'Home' %} <i class="bi bi-house"></i></a>
+                {% endif %}
+              </li>
+
+                <!-- post -->
+              <li class="nav-item">
+                {% if request.path == "/fr/posts/create/" or  request.path == "/en/posts/create/" %}
+                  <a class="nav-link active fw-bold" aria-current="page" href="{% url 'create_post' %}">{% translate 'Post' %} <i class="bi bi-file-earmark-plus-fill"></i></a>
+                {% else %}
+                    <a class="nav-link" href="{% url 'create_post' %}">{% translate 'Post' %} <i class="bi bi-file-earmark-plus"></i></a>
+                {% endif %}
+              </li>
+
+                <!-- languages -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {% translate 'Languages' %} <i class="bi bi-translate"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- get the languages list  -->
+                    {% get_available_languages as LANGUAGES %}
+                    <!--  get languages informations -->
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <!-- get the current language -->
+                    {% get_current_language as LANGUAGE_CODE %}
+
+                    {% for language in languages %}
+                        <li>
+                            <form action="{% url 'set_language' %}" method="post">
+                              {% csrf_token %}
+
+                              <!-- post the current path as parameter -->
+                              <input name="next" type="hidden" value="{{ request.path }}">
+                              <!-- post the chosen language code as parameter -->
+                              <input name="language" type="hidden" value="{{ language.code }}">
+
+                              <button type="submit" class="dropdown-item">
+                                  {% if language.code == request.LANGUAGE_CODE %}
+                                      <strong>{{ language.name_local|title }}</strong>
+                                  {% else %}
+                                      {{ language.name_local|title }}
+                                  {% endif %}
+                              </button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+              </li>
+
+              <!-- current language -->
+              <li class="nav-item">
+                <a class="nav-link disabled d-lg-block d-none" aria-disabled="true">{{request.LANGUAGE_CODE|title}}</a>
+              </li>
+
+                <!-- chatbot -->
+                <li class="nav-item">
+                  {% if request.path == "/fr/chatbot/" or  request.path == "/en/chatbot/" %}
+                    <a class="nav-link active fw-bold" aria-current="page" href="{% url 'chatbot' %}">Chatbot <i class="bi bi-chat-quote-fill"></i></a>
+                  {% else %}
+                      <a class="nav-link" href="{% url 'chatbot' %}">Chatbot <i class="bi bi-chat-quote"></i></i></a>
+                  {% endif %}
+                </li>
+
+            </ul>
+
+            <!--  Middle -->
+            <ul class="navbar-nav me-auto">
+
+              <!-- Search Button trigger modal -->
+              <li class="nav-item">
+                <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal" id="search_button_trigger_modal">{% translate "Search" %} <i class="bi bi-search"></i></a>
+              </li>
+
+            </ul>
+
+            <!-- Right Side-->
+             <ul class="navbar-nav">
+
+              {% if request.user.is_authenticated %}
+
+                <li class="nav-item">
+                  {% if request.path == "/fr/account/" or request.path == "/en/account/" %} 
+                    <a href="{% url 'account' %}" class="nav-link active fw-bold" aria-current="page">{% translate "Account" %}</a>
+                  {% else %}
+                  <a href="{% url 'account' %}" class="nav-link">{% translate "Account" %}</a>
+                  {% endif %}
+                </li>
+
+                <li class="nav-item"> 
+                  <a href="{% url 'logout' %}" class="nav-link">{% translate "Log out" %}</a>
+                </li>
+                
+              {% else %}
+
+                <li class="nav-item">
+                  {% if request.path == "/fr/signup/" or request.path == "/en/signup/" %}
+                    <a href="{% url 'signup' %}" class="nav-link active fw-bold" aria-current="page">{% translate "Sign up" %}</a>
+                  {% else %} 
+                    <a href="{% url 'signup' %}" class="nav-link">{% translate "Sign up" %}</a>
+                  {% endif %}
+                </li>
+
+                <li class="nav-item">
+                  {% if request.path == "/fr/login/" or request.path == "/en/login/" %}
+                    <a href="{% url 'login' %}" class="nav-link active fw-bold" aria-current="page">{% translate "Log in" %}</a>
+                  {% else %}
+                    <a href="{% url 'login' %}" class="nav-link">{% translate "Log in" %}</a>
+                  {% endif %}
+                </li>
+              
+              {% endif %}
+             </ul>
+
+          </div>
+        </div>
+      </nav>
+</header>

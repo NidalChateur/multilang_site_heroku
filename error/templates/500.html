@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+
+  <h1 class="text-center mt-5 pt-5">
+    (500) {% translate "Internal Server Error" %}
+  </h1>
+  <p class="text-center mt-3">
+    {% translate "It looks like we're experiencing some technical difficulties. We apologize for the inconvenience." %}
+  </p>
+  <p class="text-center mt-3">
+    {% translate "Please try again later. If the issue persists, you can contact us at" %} <a href="mailto:nidalchateur@outlook.com">nidalchateur@outlook.com</a>.
+  </p>
+
+
+
+{% endblock content %}

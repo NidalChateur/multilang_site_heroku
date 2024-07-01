@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-28 16:02+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\authentication\forms.py:26 .\authentication\forms.py:68
+#: .\authentication\templates\account.html:19
+msgid "Username"
+msgstr "Nom d’utilisateur"
+
+#: .\authentication\forms.py:28
+msgid "Password"
+msgstr "Mot de passe"
+
+#: .\authentication\forms.py:41 .\authentication\forms.py:82
+#: .\authentication\forms.py:90
+msgid "Invalid credentials."
+msgstr "Identifiants invalides."
+
+#: .\authentication\templates\account.html:14
+msgid "profile photo"
+msgstr "photo de profil"
+
+#: .\authentication\templates\account.html:21
+msgid "First name"
+msgstr "Prénom"
+
+#: .\authentication\templates\account.html:24
+msgid "Last name"
+msgstr "Nom"
+
+#: .\authentication\templates\account.html:29
+msgid "Creation date"
+msgstr "Date de création"
+
+#: .\authentication\templates\account.html:33
+#: .\authentication\templates\account.html:42
+#: .\main\templates\partials\read_post.html:35
+#: .\main\templates\partials\read_post.html:44
+msgid "at"
+msgstr "à"
+
+#: .\authentication\templates\account.html:38
+#: .\main\templates\partials\read_post.html:40
+msgid "Last modification"
+msgstr "Dernière modification"
+
+#: .\authentication\templates\account.html:47
+#: .\authentication\templates\password_update.html:10
+msgid "Change Password"
+msgstr "Changer mot de passe"
+
+#: .\authentication\templates\account.html:48
+#: .\authentication\templates\account_update.html:10
+msgid "Update Account"
+msgstr "Modifier Compte"
+
+#: .\authentication\templates\account.html:52
+msgid "Delete Account"
+msgstr "Supprimer Compte"
+
+#: .\authentication\templates\account_update.html:15
+#: .\authentication\templates\password_update.html:16
+#: .\authentication\templates\reset_password.html:15
+msgid "Save"
+msgstr "Enregistrer"
+
+#: .\authentication\templates\account_update.html:16
+#: .\authentication\templates\login.html:19
+#: .\authentication\templates\password_update.html:17
+#: .\authentication\templates\reset_password.html:16
+#: .\authentication\templates\reset_password_request.html:16
+#: .\authentication\templates\signup.html:16
+#: .\main\templates\post_form.html:15 .\main\templates\post_update.html:15
+msgid "Reset"
+msgstr "Effacer"
+
+#: .\authentication\templates\account_update.html:17
+#: .\authentication\templates\login.html:20
+#: .\authentication\templates\password_update.html:18
+#: .\authentication\templates\reset_password.html:17
+#: .\authentication\templates\reset_password_request.html:17
+#: .\authentication\templates\signup.html:17
+#: .\main\templates\post_form.html:16 .\main\templates\post_update.html:16
+msgid "Cancel"
+msgstr "Annuler"
+
+#: .\authentication\templates\login.html:12
+#: .\authentication\templates\login.html:18
+#: .\templates\partials\navbar.html:127 .\templates\partials\navbar.html:129
+msgid "Log in"
+msgstr "Connexion"
+
+#: .\authentication\templates\login.html:25
+msgid "Forgot Password"
+msgstr "Mot de passe oublié"
+
+#: .\authentication\templates\login.html:29
+msgid "Need an account"
+msgstr "Créer un compte"
+
+#: .\authentication\templates\login.html:29
+msgid "Sign Up Now"
+msgstr "S'inscrire maintenant"
+
+#: .\authentication\templates\partials\modal_delete_account.html:8
+msgid "Delete my account permanently"
+msgstr "Supprimer mon compte définitivement"
+
+#: .\authentication\templates\partials\modal_delete_account.html:9
+#: .\authentication\templates\partials\modal_delete_account.html:17
+#: .\main\templates\partials\modal_delete_post.html:8
+#: .\main\templates\partials\modal_delete_post.html:11
+#: .\main\templates\partials\modal_search_post.html:21
+msgid "Close"
+msgstr "Fermer"
+
+#: .\authentication\templates\partials\modal_delete_account.html:13
+msgid "Your personal data and all your posts will be deleted."
+msgstr "Vos données personnelles ainsi que tous vos posts seront supprimés."
+
+#: .\authentication\templates\partials\modal_delete_account.html:20
+#: .\main\templates\partials\modal_delete_post.html:14
+msgid "Confirm delete"
+msgstr "Confirmer suppression"
+
+#: .\authentication\templates\reset_password.html:10
+msgid "Password Reset"
+msgstr "Réinitialisation du mot de passe"
+
+#: .\authentication\templates\reset_password_request.html:10
+#: .\authentication\views.py:197
+msgid "Password Reset Request"
+msgstr "Demande de réinitialisation du mot de passe"
+
+#: .\authentication\templates\reset_password_request.html:15
+#: .\chatbot\templates\chatbot.html:24
+msgid "Send"
+msgstr "Envoyer"
+
+#: .\authentication\templates\signup.html:10
+#: .\authentication\templates\signup.html:15
+#: .\templates\partials\navbar.html:119 .\templates\partials\navbar.html:121
+msgid "Sign up"
+msgstr "Inscription"
+
+#: .\authentication\views.py:38
+msgid "Account created successfully ! You are now able to login."
+msgstr "Compte créé avec succès ! Vous pouvez maintenant vous connecter."
+
+#: .\authentication\views.py:61
+msgid "Successfully logged in !"
+msgstr "Connexion réussie !"
+
+#: .\authentication\views.py:73
+msgid "You are now logged out."
+msgstr "Vous êtes maintenant déconnecté."
+
+#: .\authentication\views.py:105
+msgid "Account updated successfully !"
+msgstr "Compte mis à jour avec succès !"
+
+#: .\authentication\views.py:119
+msgid "Your account has been deleted."
+msgstr "Votre compte a été supprimé."
+
+#: .\authentication\views.py:138 .\authentication\views.py:265
+msgid "Password updated successfully !"
+msgstr "Mot de passe mis à jour avec succès !"
+
+#: .\authentication\views.py:176
+msgid "Hello"
+msgstr "Bonjour"
+
+#: .\authentication\views.py:179
+msgid "You are receiving this email because you requested a password reset for your account on our site."
+msgstr "Vous recevez cet e-mail parce que vous avez demandé une réinitialisation de mot de passe pour votre compte sur notre site."
+
+
+#: .\authentication\views.py:182
+msgid "Reset Your Password"
+msgstr "Réinitialiser votre mot de passe"
+
+#: .\authentication\views.py:184
+msgid "If you did not request this reset, you can safely ignore this email. No changes will be made to your account."
+msgstr "Si vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet e-mail en toute sécurité. Aucune modification ne sera apportée à votre compte."
+
+#: .\authentication\views.py:186
+msgid "Thank you,"
+msgstr "Merci,"
+
+#: .\authentication\views.py:215
+msgid "Password reset email has been sent. Please check your inbox."
+msgstr "Un e-mail de réinitialisation de mot de passe a été envoyé. Veuillez vérifier votre boîte de réception."
+
+#: .\authentication\views.py:220
+msgid "The service is currently unavailable. Please try again later."
+msgstr "Le service est actuellement indisponible. Veuillez réessayer plus tard."
+
+
+#: .\chatbot\templates\chatbot.html:12
+msgid "Hi, I am AI Chatbot, you can ask me anything."
+msgstr "Salut, je suis un chatbot IA, vous pouvez me demander n'importe quoi."
+
+#: .\chatbot\templates\chatbot.html:23
+msgid "Type your message ..."
+msgstr "Votre message ..."
+
+#: .\chatbot\views.py:46
+msgid "I am here but it is not free. (^_^)"
+msgstr "Je suis ici, mais ce n'est pas gratuit.  (^_^)"
+
+#: .\main\forms.py:10 .\main\forms.py:11
+msgid "Title"
+msgstr "Titre"
+
+#: .\main\forms.py:17 .\main\forms.py:18
+msgid "Content"
+msgstr "Contenu"
+
+#: .\main\templates\partials\modal_delete_post.html:7
+#: .\main\templates\partials\read_post.html:52
+#: .\main\templates\partials\read_post.html:56
+msgid "Delete"
+msgstr "Supprimer"
+
+#: .\main\templates\partials\modal_search_post.html:11
+#: .\main\templates\partials\modal_search_post.html:22
+#: .\templates\partials\navbar.html:93
+msgid "Search"
+msgstr "Rechercher"
+
+#: .\main\templates\partials\pagination.html:20
+msgid "Previous"
+msgstr "Précédent"
+
+#: .\main\templates\partials\pagination.html:54
+msgid "Next"
+msgstr "Suivant"
+
+#: .\main\templates\partials\read_post.html:31
+msgid "Publication date"
+msgstr "Date de publication"
+
+#: .\main\templates\partials\read_post.html:49
+msgid "See"
+msgstr "Voir"
+
+#: .\main\templates\partials\read_post.html:51
+msgid "Update"
+msgstr "Modifier"
+
+#: .\main\templates\post_form.html:9
+msgid "What would you like to discuss"
+msgstr "De quoi souhaitez vous discuter"
+
+#: .\main\templates\post_form.html:14
+msgid "Publish "
+msgstr "Publier"
+
+#: .\main\templates\post_update.html:9
+msgid "Update your post"
+msgstr "Modifier votre post"
+
+#: .\main\templates\post_update.html:14
+msgid "Save "
+msgstr "Enregistrer"
+
+#: .\main\templates\posts_list.html:12
+msgid "No post"
+msgstr "Pas de publication"
+
+#: .\main\views.py:76
+msgid "Post created successfully."
+msgstr "Publication créée avec succès."
+
+#: .\main\views.py:97
+msgid "Post updated successfully."
+msgstr "Publication mise à jour avec succès."
+
+#: .\main\views.py:108
+msgid "Post deleted successfully."
+msgstr "Publication supprimée avec succès."
+
+#: .\multilang_site\settings.py:131
+msgid "French"
+msgstr "Français"
+
+#: .\multilang_site\settings.py:132
+msgid "English"
+msgstr "Anglais"
+
+#: .\templates\partials\navbar.html:21 .\templates\partials\navbar.html:23
+msgid "Home"
+msgstr "Accueil"
+
+#: .\templates\partials\navbar.html:30 .\templates\partials\navbar.html:32
+msgid "Post"
+msgstr "Publier"
+
+#: .\templates\partials\navbar.html:39
+msgid "Languages"
+msgstr "Langues"
+
+#: .\templates\partials\navbar.html:105 .\templates\partials\navbar.html:107
+msgid "Account"
+msgstr "Compte"
+
+#: .\templates\partials\navbar.html:112
+msgid "Log out"
+msgstr "Déconnexion"
+
+#: .\error\templates\404.html:8
+msgid "Oops! Page not found"
+msgstr "Oups ! Page non trouvée"
+
+#: .\error\templates\404.html:11
+msgid "It seems that the page you are looking for does not exist or has been moved."
+msgstr "Il semble que la page que vous cherchez n'existe pas ou a été déplacée."
+
+#: .\error\templates\403.html:8
+msgid "Forbidden"
+msgstr "Accès interdit"
+
+#: .\error\templates\403.html:11
+msgid "You do not have permission to access this page."
+msgstr "Vous n'avez pas la permission d'accéder à cette page."
+
+#: .\error\templates\500.html:8
+msgid "Internal Server Error"
+msgstr "Erreur Interne du Serveur"
+
+#: .\error\templates\500.html:11
+msgid "It looks like we're experiencing some technical difficulties. We apologize for the inconvenience."
+msgstr "Il semble que nous rencontrions des difficultés techniques. Nous vous prions de nous excuser pour la gêne occasionnée."
+
+#: .\error\templates\500.html:14
+msgid "Please try again later. If the issue persists, you can contact us at"
+msgstr "Veuillez réessayer plus tard. Si le problème persiste, vous pouvez nous contacter à"

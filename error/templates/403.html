@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+
+  <h1 class="text-center mt-5 pt-5">
+    (403) {% translate "Forbidden" %}
+  </h1>
+  <p class="text-center mt-3">
+    {% translate "You do not have permission to access this page." %}
+  </p>
+
+
+
+{% endblock content %}

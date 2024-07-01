@@ -1,0 +1,24 @@
+{% load i18n %}
+<!-- Modal Delete Post-->
+<div class="modal fade" id="ModalDelete{{post.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- title -->
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{% translate "Delete" %} {{post.title|title}} ?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{% translate 'Close' %}"></button>
+        </div>
+
+        <!-- form -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% translate "Close" %}</button>
+          <form action="{% url 'delete_post' post.id %}" method="post">
+                {% csrf_token %}
+              <button type="submit" class="btn btn-danger">{% translate "Confirm delete" %}</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>

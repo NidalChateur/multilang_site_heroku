@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "multilang-site"
+version = "0.1.0"
+description = ""
+authors = ["Nidal Chateur <nidalchateur@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.0.6"
+django-bootstrap5 = "^24.2"
+pillow = "^10.3.0"
+python-dotenv = "^1.0.1"
+cryptography = "^42.0.8"
+PyJWT = {extras = ["crypto"], version = "^2.8.0"}
+openai2 = "^1.7.5"
+ixc-whitenoise = {extras = ["brotli"], version = "^0.6.1"}
+dj-database-url = "^2.2.0"
+djangorestframework = "^3.15.2"
+
+[tool.poetry.group.dev.dependencies]
+gunicorn = "^22.0.0"
+uvicorn = "^0.30.1"
+psycopg2-binary = "^2.9.9"
+flake8 = "^7.1.0"
+flake8-html = "^0.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

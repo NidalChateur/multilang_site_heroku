@@ -1,0 +1,27 @@
+{% load i18n %}
+<!-- Modal Delete User Account-->
+<div class="modal fade" id="ModalDeleteAccount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{% translate "Delete my account permanently" %} ?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{% translate 'Close' %}"></button>
+        </div>
+
+        <div class="card-body">
+          <p>{% translate "Your personal data and all your posts will be deleted." %}</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% translate "Close" %}</button>
+          <form action="{% url 'delete_account' %}" method="post">
+                {% csrf_token %}
+              <button type="submit" class="btn btn-danger">{% translate "Confirm delete" %}</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>

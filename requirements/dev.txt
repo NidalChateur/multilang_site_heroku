@@ -1,0 +1,34 @@
+# dependencies
+poetry
+
+# backend framework
+django
+
+# api_rest
+djangorestframework
+
+# frontend framework
+django-bootstrap5
+
+# image
+pillow
+
+# load environnement variables
+python-dotenv
+
+# encrypt an decrypt data
+cryptography
+
+# jwt token
+pyjwt[crypto]
+
+# chatbot
+openai
+
+# deploy requirements
+dj-database-url
+whitenoise[brotli]
+
+# linting
+flake8
+flake8-html

@@ -1,0 +1,8 @@
+.git
+README.md
+env
+.env
+private_key.pem
+setup.cfg
+db.sqlite3
+flake8_html_report

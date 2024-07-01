@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+
+{% block content %}
+
+{% load i18n %}
+<div class="row d-flex justify-content-center mx-1">
+    <div class=" col-lg-6 card mb-5 shadow p-3 bg-body-tertiary rounded">
+
+        {% if user.image %}
+            <div>
+                <img src="{{user.image.url}}"  alt="{% translate 'profile photo' %}" class="img-fluid rounded-4 mx-auto d-block border">
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            <p class="card-text">Email : {{user.email}}</p>
+
+            <p class="card-text">{% translate 'Username' %} : {{user.username}}</p>
+
+            {% if user.first_name %}
+                <p class="card-text">{% translate 'First name' %} : {{user.first_name}}</p>
+            {% endif %}
+
+            {% if user.last_name %}
+                <p class="card-text">{% translate 'Last name' %} : {{user.last_name}}</p>
+            {% endif %}
+            
+            <!-- date joined -->
+            <p class="text-muted pt-2 border-top">
+                {% translate 'Creation date' %} : 
+                <!-- date -->
+                {{ user.date_joined|date:"d-m-Y"}},
+                <!-- hour -->
+                {% translate "at" %} {{ user.date_joined|time|upper}}
+            </p>
+
+            <!-- modification date -->
+            {% if user.date_joined != user.modification_date %}
+                <p class="text-muted">{% translate 'Last modification' %} : 
+                    <!-- date -->
+                    {{user.modification_date|date:"d-m-Y"}},
+                    <!-- hour -->
+                    {% translate "at" %} {{ user.modification_date|time|upper}}
+                </p>
+            {%  endif %}
+
+            <!-- buttons -->
+            <a href="{% url 'change_password' %}" class="btn btn-primary mt-1">{% translate "Change Password" %}</a> 
+            <a href="{% url 'update_account' %}" class="btn btn-warning mt-1">{% translate "Update Account" %}</a> 
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger mt-1" data-bs-toggle="modal" data-bs-target="#ModalDeleteAccount">
+                {% translate "Delete Account" %}
+            </button>
+            
+            <!-- modal delete user -->
+             {% include "partials/modal_delete_account.html" %}
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,72 @@
+{% load i18n %}
+<div class="row d-flex justify-content-center mx-1">
+    <div class=" col-lg-6 card mb-5 shadow p-3 bg-body-tertiary rounded">
+
+        <!-- author -->
+        <div class="d-flex border-bottom pb-2">
+
+            <!-- hidden : display : none (used to decrypt user)-->
+            <span class="d-none">{{post.author.decrypt}}</span>
+
+            <!-- author image -->
+            {% if post.author.image %}
+                <img class="rounded-circle author_image" src="{{post.author.image.url}}" alt="{{post.author.username}} photo"> 
+            {% endif %}
+
+            <!-- author username -->
+            <h6 class="ms-3 my-auto username">
+                <a href="{% url 'user_posts' post.author.id %}" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                    {{post.author.username}}
+                </a>
+            </h6>
+
+        </div>
+
+        {% if post.image %}
+            <div class="mt-3">
+                <img src="{{post.image.url}}"  alt="image {{post.title}}" class="img-fluid rounded-4 mx-auto d-block border">
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            <h5 class="card-title">{{post.title|title}}</h5>
+
+            <p class="card-text">{{post.content}}</p>
+            
+            <!-- publication date -->
+            <p class="text-muted pt-2 border-top">
+                {% translate 'Publication date' %} : 
+                <!-- date -->
+                {{ post.publication_date|date:"d-m-Y"}},
+                <!-- hour -->
+                {% translate "at" %} {{ post.publication_date|time|upper}}
+            </p>
+
+            <!-- modification date -->
+            {% if post.publication_date != post.modification_date %}
+                <p class="text-muted">{% translate 'Last modification' %} : 
+                    <!-- date -->
+                    {{post.modification_date|date:"d-m-Y"}},
+                    <!-- hour -->
+                    {% translate "at" %} {{ post.modification_date|time|upper}}
+                </p>
+            {%  endif %}
+
+            <!-- buttons -->
+             <!-- detail -->
+            <a href="{% url 'post' post.id %}" class="btn btn-primary">{% translate "See" %}</a> 
+            {% if request.user.id == post.author.id %}
+                <!-- update -->
+                <a href="{% url 'update_post' post.id %}" class="btn btn-warning">{% translate "Update" %}</a> 
+
+                <!-- delete : Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDelete{{post.id}}">
+                    {% translate "Delete" %}
+                </button>
+            {% endif %}
+            
+            <!-- modal delete post -->
+            {% include "partials/modal_delete_post.html" %}
+        </div>
+    </div>
+</div>

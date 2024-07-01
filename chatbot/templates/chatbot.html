@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block content %}
+
+    <!-- messageList -->
+    <div class="row d-flex justify-content-center mx-1 pb-5 mb-5">
+        <ul id="messagesList" class="list-group">
+            <li class="list-group-item list-group-item-success">
+                <div class="message-sender"><b>AI Chatbot</b></div>
+                <div class="message-content">{% translate "Hi, I am AI Chatbot, you can ask me anything." %}</div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- form -->
+    <div class="row z-1 row fixed-bottom d-flex justify-content-center">
+        <form action="" class="col-8 form z-1" id="chatbotForm">
+            {% csrf_token %}
+            
+            <div class="input-group mb-3">
+                <input name="message" id="inputMessage" type="text" class="form-control" placeholder="{% translate 'Type your message ...' %}" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button id="button-addon2" class="btn btn-outline-success" type="submit" >{% translate 'Send' %}</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
