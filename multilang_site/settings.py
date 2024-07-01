@@ -206,7 +206,7 @@ django_heroku.settings(locals())
 DATABASES = {
     "default": dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default="postgresql://multilang_site_db_user:Z9QlSGazA30H89xFvHsIJlkbTVPVHVcB@dpg-cq0d34aju9rs73arf3dg-a.frankfurt-postgres.render.com/multilang_site_db",
+        default=os.environ.get("DATABASE_URL"),
         conn_max_age=600,
     )
 }
