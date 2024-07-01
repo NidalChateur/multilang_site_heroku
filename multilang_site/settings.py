@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
-import django_heroku
 import dj_database_url
+import django_heroku
 from django.utils.translation import gettext_lazy as _
 from dotenv import load_dotenv
 
@@ -105,21 +105,13 @@ WSGI_APPLICATION = "multilang_site.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-if DEBUG:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-else:
-    DATABASES = {
-        "default": dj_database_url.config(
-            # Replace this value with your local database's connection string.
-            default="postgresql://multilang_site_db_user:Z9QlSGazA30H89xFvHsIJlkbTVPVHVcB@dpg-cq0d34aju9rs73arf3dg-a.frankfurt-postgres.render.com/multilang_site_db",
-            conn_max_age=600,
-        )
-    }
+DATABASES = {
+    "default": dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default="postgresql://multilang_site_db_user:Z9QlSGazA30H89xFvHsIJlkbTVPVHVcB@dpg-cq0d34aju9rs73arf3dg-a.frankfurt-postgres.render.com/multilang_site_db",
+        conn_max_age=600,
+    )
+}
 
 
 # Password validation
@@ -210,3 +202,11 @@ if not DEBUG:
 
 # heroku config (deployment)
 django_heroku.settings(locals())
+
+DATABASES = {
+    "default": dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default="postgresql://multilang_site_db_user:Z9QlSGazA30H89xFvHsIJlkbTVPVHVcB@dpg-cq0d34aju9rs73arf3dg-a.frankfurt-postgres.render.com/multilang_site_db",
+        conn_max_age=600,
+    )
+}
