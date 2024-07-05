@@ -103,6 +103,13 @@ WSGI_APPLICATION = "multilang_site.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+DATABASES = {
+    "default": dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default=os.environ.get("DATABASE_URL"),
+        conn_max_age=600,
+    )
+}
 
 
 # Password validation
@@ -194,10 +201,4 @@ if not DEBUG:
 # heroku config (deployment)
 django_heroku.settings(locals())
 
-DATABASES = {
-    "default": dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default=os.environ.get("DATABASE_URL"),
-        conn_max_age=600,
-    )
-}
+
