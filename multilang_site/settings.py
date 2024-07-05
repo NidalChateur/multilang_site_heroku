@@ -105,15 +105,6 @@ WSGI_APPLICATION = "multilang_site.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-DATABASES = {
-    "default": dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default="postgresql://multilang_site_db_user:Z9QlSGazA30H89xFvHsIJlkbTVPVHVcB@dpg-cq0d34aju9rs73arf3dg-a.frankfurt-postgres.render.com/multilang_site_db",
-        conn_max_age=600,
-    )
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
